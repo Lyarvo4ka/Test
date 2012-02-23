@@ -1,0 +1,923 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#ifndef APSTUDIO_INVOKED
+#include "targetver.h"
+#endif
+#include "afxres.h"
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#ifndef APSTUDIO_INVOKED\r\n"
+    "#include ""targetver.h""\r\n"
+    "#endif\r\n"
+    "#include ""afxres.h""\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#include ""res\\FlashReader.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#include ""OXMain.rc""       // Ultimate toolbox components\r\n"
+    "#endi\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_DEVICES             BITMAP                  "res\\Devices.bmp"
+IDB_STATES              BITMAP                  "res\\States.bmp"
+IDB_PAGE_STATE          BITMAP                  "res\\PageState.bmp"
+IDR_MAINFRAME           BITMAP                  "res\\Toolbar.bmp"
+IDR_MENU_BMP            BITMAP                  "res\\Menu.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR  16, 15
+BEGIN
+    BUTTON      ID_FILE_NEW
+    BUTTON      ID_FILE_OPEN
+    SEPARATOR
+    BUTTON      ID_READER_CONNECT
+    SEPARATOR
+    BUTTON      ID_READER_START
+    BUTTON      ID_READER_STOP
+    SEPARATOR
+    BUTTON      ID_APP_ABOUT
+END
+
+IDR_MENU_BMP TOOLBAR  16, 15
+BEGIN
+    BUTTON      ID_FILE_NEW
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_READER_CONNECT
+    SEPARATOR
+    BUTTON      ID_READER_START
+    BUTTON      ID_READER_STOP
+    BUTTON      ID_READER_SETTINGS
+    BUTTON      ID_DATABASE_EDIT
+    BUTTON      ID_DATABASE_IMPORT
+    BUTTON      ID_DATABASE_EXPORT
+    BUTTON      ID_DATABASE_MERGE
+    BUTTON      ID_APP_ABOUT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU_NEW_STATE MENU 
+BEGIN
+    POPUP "NEW_STATE_MENU"
+    BEGIN
+        MENUITEM "Not read",                    ID_NEW_NOTREADED
+        MENUITEM "Read once",                   ID_NEW_READEDONCE
+        MENUITEM "Verify Error",                ID_NEW_VERIFYERROR
+        MENUITEM "Verify OK",                   ID_NEW_VERIFYOK
+        MENUITEM "Corrected high",              ID_NEW_CORRECTEDHIGH
+        MENUITEM "Corrected low",               ID_NEW_CORRECTEDLOW
+    END
+END
+
+IDR_MAINFRAME MENU 
+BEGIN
+    POPUP "&Task"
+    BEGIN
+        MENUITEM "&New task\tCtrl+N",           ID_FILE_NEW
+        MENUITEM "&Open task...\tCtrl+O",       ID_FILE_OPEN
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Reader"
+    BEGIN
+        MENUITEM "&Reconnect reader\tCtrl+R",   ID_READER_CONNECT
+        MENUITEM SEPARATOR
+        MENUITEM "&Start task\tCtrl+S",         ID_READER_START
+        MENUITEM "Sto&p task\tCtrl+P",          ID_READER_STOP
+        MENUITEM SEPARATOR
+        MENUITEM "Se&ttings\tCtrl+T",           ID_READER_SETTINGS
+    END
+    POPUP "Database"
+    BEGIN
+        MENUITEM "&Edit\tCtrl+E",               ID_DATABASE_EDIT
+        MENUITEM "&Import\tCtrl+I",             ID_DATABASE_IMPORT
+        MENUITEM "&Merge\tCtrl+M",              ID_DATABASE_MERGE
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About FlashReader...\tF1",   ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_UPDATE_RECORD DIALOGEX 0, 0, 265, 215
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Confirmation of record  raplacement"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Replace",IDOK,150,196,50,14
+    PUSHBUTTON      "Skip",IDCANCEL,210,196,50,14
+    LTEXT           "Source record",IDC_RECORD_SRC,5,115,255,75,NOT WS_VISIBLE | WS_BORDER
+    LTEXT           "Destination record",IDC_RECORD_DST,5,20,255,75,NOT WS_VISIBLE | WS_BORDER
+    LTEXT           "Replace exiting record",IDC_STATIC,5,5,72,8
+    LTEXT           "by new record ?",IDC_STATIC,5,100,52,8
+END
+
+IDD_SELECT_READER DIALOGEX 0, 0, 255, 130
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Select Reader"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_TREE_DEVICES,"SysTreeView32",TVS_SHOWSELALWAYS | TVS_FULLROWSELECT | WS_HSCROLL | WS_TABSTOP,9,16,237,85
+    DEFPUSHBUTTON   "OK",IDOK,140,109,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,198,109,50,14
+    GROUPBOX        "Connected Reader divices",IDC_STATIC,7,7,241,95
+END
+
+IDD_RECORD_EDIT DIALOGEX 0, 0, 265, 199
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Flash record"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,145,180,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,210,180,50,14
+    LTEXT           "Flash parameters",IDC_FLASH_PARAMETERS,5,5,255,170,NOT WS_VISIBLE | WS_BORDER
+END
+
+IDD_BASE_EDIT DIALOGEX 0, 0, 320, 255
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Database edit"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "Base records",IDC_BASE_RECORDS,5,5,255,170,NOT WS_VISIBLE | WS_BORDER | WS_TABSTOP
+    PUSHBUTTON      "New",IDC_BTN_NEW,265,15,50,14
+    PUSHBUTTON      "Edit",IDC_BTN_EDIT,265,35,50,14
+    PUSHBUTTON      "Remove",IDC_BTN_REMOVE,265,55,50,14
+    PUSHBUTTON      "Vendors",IDC_BTN_VENDORS,265,90,50,14
+    PUSHBUTTON      "Close",IDOK,265,235,50,14
+    LTEXT           "Flash info",IDC_FLASH_INFO,5,175,256,75,NOT WS_VISIBLE | WS_BORDER
+END
+
+IDD_VENDOR_RECORDS DIALOGEX 0, 0, 240, 159
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Vendors"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_LIST_VENDORS,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_OWNERDRAWFIXED | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,5,5,175,149
+    PUSHBUTTON      "New",IDC_BTN_VENDOR_NEW,185,5,50,14
+    PUSHBUTTON      "Remove",IDC_BTN_VENDOR_REMOVE,185,25,50,14
+    PUSHBUTTON      "Close",IDOK,185,140,50,14
+END
+
+IDD_VENDOR_NEW DIALOGEX 0, 0, 220, 55
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "New vendor"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT_VENDOR_NAME,10,15,150,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_VENDOR_ID,175,15,35,12,ES_CENTER | ES_UPPERCASE | ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,110,36,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,165,36,50,14
+    GROUPBOX        "VID (hex)",IDC_STATIC,170,5,45,26
+    GROUPBOX        "Vendor name",IDC_STATIC,5,5,160,26
+END
+
+IDD_SETTINGS DIALOGEX 0, 0, 212, 194
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Settings"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT_DIRECTORY,10,15,193,12,ES_AUTOHSCROLL
+    CONTROL         "Each CS in a separate file",IDC_CHECK_SEPARATE_CS,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,39,97,10
+    CONTROL         "",IDC_SLIDER_LIMIT,"msctls_trackbar32",TBS_AUTOTICKS | TBS_TOP | TBS_TRANSPARENTBKGND | WS_TABSTOP,45,70,160,20,WS_EX_TRANSPARENT
+    CONTROL         "",IDC_SLIDER_DELTA,"msctls_trackbar32",TBS_AUTOTICKS | TBS_TOP | TBS_TRANSPARENTBKGND | WS_TABSTOP,45,98,160,20,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_STEP_COUNT,50,123,30,12,ES_CENTER | ES_AUTOHSCROLL | ES_NUMBER
+    PUSHBUTTON      "Defaults",IDC_BTN_DEFAULTS,160,123,40,12
+    CONTROL         "Enable",IDC_CHECK_LOG_ENABLE,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | BS_LEFT | WS_TABSTOP,10,154,37,10
+    EDITTEXT        IDC_EDIT_LOG_SIZE,160,153,30,12,ES_CENTER | ES_AUTOHSCROLL | ES_NUMBER
+    DEFPUSHBUTTON   "OK",IDOK,97,175,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,157,175,50,14
+    CTEXT           "0",IDC_LIMIT_VALUE,52,65,15,8
+    GROUPBOX        "Bit correction parameters",IDC_STATIC,5,53,202,88
+    CTEXT           "0",IDC_DELTA_VALUE,52,93,15,8
+    RTEXT           "Limit (%)",IDC_STATIC,10,70,35,8
+    RTEXT           "Delta (%)",IDC_STATIC,10,98,35,8
+    RTEXT           "Step count",IDC_STATIC,10,125,35,8
+    GROUPBOX        "Log file",IDC_STATIC,5,143,202,27
+    LTEXT           "Backup if size greater than",IDC_STATIC,67,155,86,8
+    LTEXT           "MB",IDC_STATIC,193,155,10,8
+    GROUPBOX        "Work folder",IDC_STATIC,5,5,202,27
+END
+
+IDD_CHANGE_PAGE_STATE DIALOGEX 0, 0, 175, 170
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Change page state"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "Global",IDC_RADIO_GLOBAL,"Button",BS_AUTORADIOBUTTON | BS_PUSHLIKE | WS_GROUP,10,35,75,12
+    CONTROL         "CS - Block - Page",IDC_RADIO_GEOMETRY,"Button",BS_AUTORADIOBUTTON | BS_PUSHLIKE,90,35,75,12
+    COMBOBOX        IDC_COMBO_NEW_STATE,70,5,100,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "OK",IDOK,65,151,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,120,151,50,14
+    RTEXT           "Change state to",IDC_STATIC,5,7,60,8
+    GROUPBOX        "Page adressing by",IDC_STATIC,5,20,165,30
+    GROUPBOX        "From",IDC_STATIC,5,90,80,55
+    GROUPBOX        "To",IDC_STATIC,90,90,80,55
+    CONTROL         "All",IDC_RADIO_ALL,"Button",BS_AUTORADIOBUTTON | BS_PUSHLIKE | WS_GROUP,10,70,35,12
+    CONTROL         "CS",IDC_RADIO_CS,"Button",BS_AUTORADIOBUTTON | BS_PUSHLIKE,50,70,35,12
+    CONTROL         "Block",IDC_RADIO_BLOCK,"Button",BS_AUTORADIOBUTTON | BS_PUSHLIKE,90,70,35,12
+    CONTROL         "Page",IDC_RADIO_PAGE,"Button",BS_AUTORADIOBUTTON | BS_PUSHLIKE,130,70,35,12
+    EDITTEXT        IDC_EDIT_FROM_PAGE,35,130,45,12,ES_CENTER | ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT_TO_PAGE,120,130,45,12,ES_CENTER | ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT_FROM_BLOCK,35,115,45,12,ES_CENTER | ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT_TO_BLOCK,120,115,45,12,ES_CENTER | ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT_FROM_CS,35,100,45,12,ES_CENTER | ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT_TO_CS,120,100,45,12,ES_CENTER | ES_AUTOHSCROLL | ES_NUMBER
+    RTEXT           "CS",IDC_STATIC,10,102,20,8
+    RTEXT           "CS",IDC_STATIC,95,102,20,8
+    RTEXT           "Block",IDC_STATIC,95,117,20,8
+    RTEXT           "Block",IDC_STATIC,10,117,20,8
+    RTEXT           "Page",IDC_STATIC,10,132,20,8
+    RTEXT           "Page",IDC_STATIC,95,132,20,8
+    GROUPBOX        "Range",IDC_STATIC,5,55,165,30
+END
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 270, 63
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About Flash Reader"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,7,7,21,20,SS_CENTERIMAGE
+    LTEXT           "Program description",IDC_APP_NAME,40,7,220,8,SS_NOPREFIX
+    LTEXT           "Version and build",IDC_APP_VERSION,40,21,220,8
+    DEFPUSHBUTTON   "OK",IDOK,213,42,50,14,WS_GROUP
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,7,40,200,1
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,7,56,200,1
+    LTEXT           "Copyright (C)",IDC_APP_COPYRIGHT,7,44,200,8,WS_DISABLED
+END
+
+IDD_FLASHREADER_FORM DIALOGEX 0, 0, 265, 360
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_RE_LOG,"RichEdit20W",WS_BORDER | WS_VSCROLL | WS_HSCROLL | 0x884,10,265,245,85
+    CONTROL         "Read once",IDC_RADIO_ONCE,"Button",BS_AUTORADIOBUTTON | BS_PUSHLIKE,10,97,90,12
+    CONTROL         "Read with verify",IDC_RADIO_VERIFY,"Button",BS_AUTORADIOBUTTON | BS_PUSHLIKE,10,112,90,12
+    CONTROL         "Read with bit correction",IDC_RADIO_REPAIR,"Button",BS_AUTORADIOBUTTON | BS_PUSHLIKE,10,127,90,12
+    GROUPBOX        "",IDC_GROUP_INFO,110,85,150,60
+    LTEXT           "Current flash",IDC_CURRENT_FLASH,5,5,255,75,NOT WS_VISIBLE | WS_BORDER
+    GROUPBOX        "Read mode",IDC_STATIC,5,85,100,60
+    CONTROL         "",IDC_PROGRESS_STEP,"msctls_progress32",PBS_SMOOTH | WS_BORDER,10,185,245,12
+    GROUPBOX        "Current step progress",IDC_STATIC,5,175,255,25
+    GROUPBOX        "Page map legend",IDC_STATIC,5,205,255,45
+    LTEXT           "Not read",IDC_STATIC,65,215,55,8
+    LTEXT           "Read once",IDC_STATIC,65,225,55,8
+    LTEXT           "Verify OK",IDC_STATIC,190,215,55,8
+    LTEXT           "Verify Error",IDC_STATIC,65,235,55,8
+    LTEXT           "Corrected high",IDC_STATIC,190,225,55,8
+    LTEXT           "Corrected low",IDC_STATIC,190,235,55,8
+    RTEXT           "5634343",IDC_STATE_COR_HI,135,225,40,8,SS_NOTIFY
+    RTEXT           "5634343",IDC_STATE_VER_ERR,10,235,40,8,SS_NOTIFY
+    RTEXT           "5634343",IDC_STATE_COR_LOW,135,235,40,8,SS_NOTIFY
+    RTEXT           "4564321",IDC_STATE_NO,10,215,40,8,SS_NOTIFY
+    RTEXT           "5634343",IDC_STATE_ONCE,10,225,40,8,SS_NOTIFY
+    RTEXT           "5634343",IDC_STATE_VER_OK,135,215,40,8,SS_NOTIFY
+    CTEXT           "CE0",IDC_LABLE_CS0,183,90,15,8
+    CTEXT           "CE3",IDC_LABLE_CS3,242,90,15,8
+    CTEXT           "CE1",IDC_LABLE_CS1,204,90,15,8
+    CTEXT           "CE2",IDC_LABLE_CS2,222,90,15,8
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,111,100,149,1
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDVERT,180,90,1,55
+    LTEXT           "Bit correction",IDC_LABLE_CORRECTION,130,133,45,8
+    LTEXT           "Read && Verify",IDC_LABLE_VERIFY,130,123,45,8
+    LTEXT           "Read once",IDC_LABLE_ONCE,130,113,45,8
+    LTEXT           "Check",IDC_LABLE_CHECK,130,103,45,8
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDVERT,240,90,1,11
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDVERT,220,90,1,11
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDVERT,200,90,1,11
+    CTEXT           "Mode",IDC_STATIC,112,90,65,8
+    GROUPBOX        "Log",IDC_FRAME_LOG,5,255,255,100
+    GROUPBOX        "Check results",IDC_STATIC,5,150,255,21
+    LTEXT           "EC 55 37 FA 44 EC 55 37 - Samsung",IDC_ID_AND_VENDOR,10,160,245,8
+END
+
+IDD_FLASH_PARAMETERS DIALOGEX 0, 0, 255, 170
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+FONT 8, "MS Shell Dlg", 400, 0, 0x0
+BEGIN
+    EDITTEXT        IDC_EDIT_PARTNUMBER,5,35,125,12,ES_UPPERCASE | ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO_VENDOR,5,10,127,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_BUS,210,110,40,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_POWER_IO,210,155,40,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_CS_CHIP,209,10,40,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_BLOCK_LU,209,40,40,12,ES_CENTER | ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT_PAGE_BLOCK,209,55,40,12,ES_CENTER | ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT_PAGE_SIZE,209,70,40,12,ES_CENTER | ES_AUTOHSCROLL | ES_NUMBER
+    COMBOBOX        IDC_COMBO_CMD_CYCLE,90,125,40,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_FULL_ADR_CYCLE,90,140,40,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_PAGE_ADR_CYCLE,90,155,40,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_SPEED,210,140,40,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    RTEXT           "Command cycles",IDC_STATIC,25,127,60,8
+    RTEXT           "Page adress cycles",IDC_STATIC,5,157,80,8
+    RTEXT           "Read cycle",IDC_STATIC,157,142,45,8
+    RTEXT           "Full adress cycles",IDC_STATIC,25,142,60,8
+    RTEXT           "Bus width",IDC_STATIC,154,112,45,8
+    RTEXT           "VCC IO",IDC_STATIC,158,157,45,8
+    GROUPBOX        "Command parameters",IDC_STATIC,0,100,135,70,BS_NOTIFY
+    RTEXT           "Page size (B)",IDC_STATIC,145,72,60,8
+    RTEXT           "CE per chip",IDC_STATIC,145,12,60,8
+    RTEXT           "Blocks per LU",IDC_STATIC,145,42,60,8
+    RTEXT           "Pages per block",IDC_STATIC,145,57,60,8
+    GROUPBOX        "Chip geometry",IDC_GEOMETRY,139,0,115,100
+    EDITTEXT        IDC_EDIT_LU_CS,209,25,40,12,ES_CENTER | ES_AUTOHSCROLL | ES_NUMBER
+    RTEXT           "LU per CE",IDC_STATIC,145,27,60,8
+    RTEXT           "Size (GB)",IDC_STATIC,145,87,60,8
+    CTEXT           "",IDC_FLASH_TOTAL_SIZE,209,86,40,10,0,WS_EX_STATICEDGE
+    CONTROL         "Edit chip ID",IDC_EDIT_ID,"CDumpEdit_SC",WS_BORDER | WS_TABSTOP,5,60,125,12
+    CONTROL         "1",IDC_MASK_0,"Button",BS_AUTOCHECKBOX | BS_CENTER | BS_PUSHLIKE | WS_TABSTOP,5,85,14,12
+    CONTROL         "2",IDC_MASK_1,"Button",BS_AUTOCHECKBOX | BS_CENTER | BS_PUSHLIKE | WS_TABSTOP,21,85,14,12
+    CONTROL         "3",IDC_MASK_2,"Button",BS_AUTOCHECKBOX | BS_CENTER | BS_PUSHLIKE | WS_TABSTOP,37,85,14,12
+    CONTROL         "4",IDC_MASK_3,"Button",BS_AUTOCHECKBOX | BS_CENTER | BS_PUSHLIKE | WS_TABSTOP,53,85,14,12
+    CONTROL         "5",IDC_MASK_4,"Button",BS_AUTOCHECKBOX | BS_CENTER | BS_PUSHLIKE | WS_TABSTOP,69,85,14,12
+    COMBOBOX        IDC_COMBO_ONFI,210,125,40,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    RTEXT           "Support ONFI",IDC_STATIC,156,127,45,8
+    CONTROL         "6",IDC_MASK_5,"Button",BS_AUTOCHECKBOX | BS_CENTER | BS_PUSHLIKE | WS_TABSTOP,85,85,14,12
+    CONTROL         "7",IDC_MASK_6,"Button",BS_AUTOCHECKBOX | BS_CENTER | BS_PUSHLIKE | WS_TABSTOP,101,85,14,12
+    CONTROL         "8",IDC_MASK_7,"Button",BS_AUTOCHECKBOX | BS_CENTER | BS_PUSHLIKE | WS_TABSTOP,117,85,14,12
+    COMBOBOX        IDC_COMBO_CMD_TYPE,55,110,75,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Chip parameters",IDC_STATIC,140,100,115,70,BS_NOTIFY
+    GROUPBOX        "Chip ID",IDC_STATIC,0,50,135,25,BS_NOTIFY
+    GROUPBOX        "Vendor",IDC_STATIC,0,0,135,25,BS_NOTIFY
+    GROUPBOX        "Mask ID",IDC_STATIC,0,75,135,25,BS_NOTIFY
+    GROUPBOX        "Partnumber",IDC_STATIC,0,25,135,25,BS_NOTIFY
+    RTEXT           "Command type",IDC_STATIC,3,112,50,8
+END
+
+IDD_BASE_RECORDS DIALOGEX 0, 0, 255, 170
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+FONT 8, "MS Shell Dlg", 400, 0, 0x0
+BEGIN
+    CONTROL         "",IDC_LIST_RECORDS,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_OWNERDRAWFIXED | WS_BORDER | WS_TABSTOP,0,25,255,142
+    COMBOBOX        IDC_FILTER_VENDOR,0,10,75,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_FILTER_TOTAL_SIZE,80,10,45,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_FILTER_CS,130,10,35,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_FILTER_BUS,170,10,40,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_FILTER_PAGE_SIZE,215,10,40,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "CE",IDC_STATIC,130,0,35,8
+    LTEXT           "Bus width",IDC_STATIC,170,0,40,8
+    LTEXT           "Page size",IDC_STATIC,215,0,40,8
+    LTEXT           "Vendor",IDC_STATIC,0,0,40,8
+    LTEXT           "Size (GB)",IDC_STATIC,80,0,40,8
+END
+
+IDD_FLASH_INFO DIALOGEX 0, 0, 255, 75
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+FONT 8, "MS Shell Dlg", 400, 0, 0x0
+BEGIN
+    RTEXT           "Command format",IDC_STATIC,5,46,55,8
+    RTEXT           "Read cycle",IDC_STATIC,5,61,55,8
+    RTEXT           "VCC IO",IDC_STATIC,145,61,25,8
+    RTEXT           "Chip geometry",IDC_STATIC,5,31,55,8
+    CTEXT           "4 CS x 68750 Bl x 23560 Pg x 2048 B",IDC_INFO_GEOMETRY,65,30,185,10,SS_SUNKEN
+    CTEXT           "80 nS",IDC_INFO_SPEED,65,60,25,10,SS_SUNKEN
+    CTEXT           "3,3 V",IDC_INFO_VCC_IO,175,60,25,10,SS_SUNKEN
+    GROUPBOX        "K9F1608GG08",IDC_INFO_PARTNUMBER,0,0,255,75
+    CTEXT           "16 bit",IDC_INFO_BUS,115,60,25,10,SS_SUNKEN
+    RTEXT           "Bus",IDC_STATIC,95,61,15,8
+    CTEXT           "<00><Ac><Ac><Ap><Ap><Ap><30>..<31>..<3F>",IDC_INFO_COMMAND,65,45,185,10,SS_SUNKEN
+    RTEXT           "Size (GB)",IDC_STATIC,175,16,35,8
+    CTEXT           "512 MB",IDC_INFO_SIZE,215,15,35,10,SS_SUNKEN
+    RTEXT           "ONFI",IDC_STATIC,205,61,17,8
+    CTEXT           "Yes",IDC_INFO_ONFI,225,60,25,10,SS_SUNKEN
+    CTEXT           "00 00 00 00 00 00 00 00",IDC_INFO_ID,65,15,105,10,SS_SUNKEN
+    RTEXT           "Chip ID",IDC_STATIC,5,16,55,8
+END
+
+IDD_PAGE_SELECT DIALOGEX 0, 0, 285, 167
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "New task"
+FONT 8, "MS Shell Dlg", 400, 0, 0x0
+BEGIN
+    LTEXT           "Static",IDC_STATIC,30,0,255,167,0,WS_EX_STATICEDGE
+    ICON            IDR_FlashReaderTYPE,IDC_STATIC,0,6,21,20
+END
+
+IDD_PAGE_START DIALOGEX 0, 0, 285, 255
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "New task"
+FONT 8, "MS Shell Dlg", 400, 0, 0x0
+BEGIN
+    CONTROL         153,IDC_STATIC,"Static",SS_BITMAP,0,0,21,255
+END
+
+IDD_PAGE_FINISH DIALOGEX 0, 0, 285, 255
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "New task"
+FONT 8, "MS Shell Dlg", 400, 0, 0x0
+BEGIN
+    LTEXT           "Flash info",IDC_FINISH_INFO,30,35,255,75,NOT WS_VISIBLE,WS_EX_STATICEDGE
+    CONTROL         153,IDC_STATIC,"Static",SS_BITMAP,0,0,21,255
+END
+
+IDD_NEW_TASK DIALOGEX 0, 0, 265, 330
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "New task"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT_TASK,11,17,245,12,ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO_VCC,50,50,40,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Test chip",IDC_BUTTON_CHECK,100,50,74,12
+    CONTROL         "Select chip from base",IDC_SELECT_BASE,"Button",BS_AUTORADIOBUTTON | BS_PUSHLIKE | WS_GROUP | WS_TABSTOP,5,115,125,12
+    CONTROL         "Create custom chip property",IDC_SELECT_CUSTOM,"Button",BS_AUTORADIOBUTTON | BS_PUSHLIKE,135,115,125,12
+    PUSHBUTTON      "Reset results",IDC_BUTTON_RESET,180,50,75,12
+    DEFPUSHBUTTON   "OK",IDOK,210,311,50,14
+    GROUPBOX        "Check chip",IDC_STATIC,5,40,255,67
+    RTEXT           "Chip VCC",IDC_STATIC,10,52,35,8
+    RTEXT           "Chip ID",IDC_STATIC,13,79,35,8
+    RTEXT           "Vendor",IDC_STATIC,13,94,35,8
+    CTEXT           "00 00 00 00 00 00 00 00",IDC_LABLE_ID,53,78,120,10,0,WS_EX_STATICEDGE
+    CTEXT           "Vendor",IDC_LABLE_VENDOR,53,93,120,10,0,WS_EX_STATICEDGE
+    LTEXT           "CE 0",IDC_LABLE_CE0,53,67,15,8
+    CTEXT           "Yes",IDC_LABLE_ONFI,233,93,25,10,0,WS_EX_STATICEDGE
+    LTEXT           "CE 1",IDC_LABLE_CE1,83,67,15,8
+    LTEXT           "CE 2",IDC_LABLE_CE2,113,67,15,8
+    LTEXT           "CE 3",IDC_LABLE_CE3,143,67,15,8
+    LTEXT           "Static",IDC_LABEL_RECORDS,5,135,255,170,NOT WS_VISIBLE,WS_EX_STATICEDGE
+    RTEXT           "Bus width",IDC_STATIC,193,80,35,8
+    CTEXT           "16 bit",IDC_LABLE_BUS,233,78,25,10,0,WS_EX_STATICEDGE
+    RTEXT           "ONFI",IDC_STATIC,193,94,35,8
+    GROUPBOX        "Enter task name",IDC_STATIC,5,5,255,30
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_UPDATE_RECORD, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 260
+        TOPMARGIN, 5
+        BOTTOMMARGIN, 210
+    END
+
+    IDD_SELECT_READER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 248
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 123
+    END
+
+    IDD_RECORD_EDIT, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 260
+        TOPMARGIN, 5
+        BOTTOMMARGIN, 194
+    END
+
+    IDD_BASE_EDIT, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 315
+        TOPMARGIN, 5
+        BOTTOMMARGIN, 250
+    END
+
+    IDD_VENDOR_RECORDS, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 235
+        TOPMARGIN, 5
+        BOTTOMMARGIN, 154
+    END
+
+    IDD_VENDOR_NEW, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 215
+        TOPMARGIN, 5
+        BOTTOMMARGIN, 50
+    END
+
+    IDD_SETTINGS, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 207
+        TOPMARGIN, 5
+        BOTTOMMARGIN, 189
+    END
+
+    IDD_CHANGE_PAGE_STATE, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 170
+        TOPMARGIN, 5
+        BOTTOMMARGIN, 165
+    END
+
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 263
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 56
+    END
+
+    IDD_FLASHREADER_FORM, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 260
+        TOPMARGIN, 5
+        BOTTOMMARGIN, 355
+    END
+
+    IDD_BASE_RECORDS, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 167
+    END
+
+    IDD_PAGE_SELECT, DIALOG
+    BEGIN
+        RIGHTMARGIN, 280
+        VERTGUIDE, 30
+    END
+
+    IDD_PAGE_START, DIALOG
+    BEGIN
+        VERTGUIDE, 30
+    END
+
+    IDD_PAGE_FINISH, DIALOG
+    BEGIN
+        VERTGUIDE, 30
+    END
+
+    IDD_NEW_TASK, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 260
+        TOPMARGIN, 5
+        BOTTOMMARGIN, 325
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\FlashReader.ico"
+IDR_FlashReaderTYPE     ICON                    "res\\FlashReaderDoc.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS 
+BEGIN
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "R",            ID_READER_CONNECT,      VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_READER_START,        VIRTKEY, CONTROL, NOINVERT
+    "P",            ID_READER_STOP,         VIRTKEY, CONTROL, NOINVERT
+    "T",            ID_READER_SETTINGS,     VIRTKEY, CONTROL, NOINVERT
+    "E",            ID_DATABASE_EDIT,       VIRTKEY, CONTROL, NOINVERT
+    "I",            ID_DATABASE_IMPORT,     VIRTKEY, CONTROL, NOINVERT
+    "M",            ID_DATABASE_MERGE,      VIRTKEY, CONTROL, NOINVERT
+    VK_F1,          ID_APP_ABOUT,           VIRTKEY, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,3,0,6
+ PRODUCTVERSION 1,3,0,6
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "CompanyName", "Epos LTD"
+            VALUE "FileDescription", "NAND Flash Reader with eSATA interface"
+            VALUE "FileVersion", "1.3.0.6"
+            VALUE "InternalName", "FlashReader.exe"
+            VALUE "LegalCopyright", "2009-2010, (c) Epos LTD.  All rights reserved."
+            VALUE "OriginalFilename", "FlashReader.exe"
+            VALUE "ProductName", "NAND Flash Reader with eSATA interface"
+            VALUE "ProductVersion", "Version 1.3, Build 0006"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDR_MAINFRAME           "FlashReader\nNO TASK\nFlashReader\nTask files (*.fld)\n.fld\nFlashReader.Document\nFlashReader.Document"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "FlashReader"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+    ID_INDICATOR_KANA       "KANA"
+    ID_INDICATOR_READER     "EPOS READER, s/n PVN001"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new task\nNew"
+    ID_FILE_OPEN            "Open an existing task\nOpen"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active document\nSave"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+    ID_FILE_MRU_FILE5       "Open this document"
+    ID_FILE_MRU_FILE6       "Open this document"
+    ID_FILE_MRU_FILE7       "Open this document"
+    ID_FILE_MRU_FILE8       "Open this document"
+    ID_FILE_MRU_FILE9       "Open this document"
+    ID_FILE_MRU_FILE10      "Open this document"
+    ID_FILE_MRU_FILE11      "Open this document"
+    ID_FILE_MRU_FILE12      "Open this document"
+    ID_FILE_MRU_FILE13      "Open this document"
+    ID_FILE_MRU_FILE14      "Open this document"
+    ID_FILE_MRU_FILE15      "Open this document"
+    ID_FILE_MRU_FILE16      "Open this document"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+    IDS_CONNECT_BUSY        "Another instance of program try connect to Reader device"
+    IDS_GEOMETRY            "Geometry - %d x %I64u bytes"
+    IDS_WRONG_TASK_NAME     "Empty Task name!"
+    IDS_WRONG_PURTNUMBER    "Purtnumber already present in database!"
+    IDS_WRONG_VENDOR        "Vendor with VID %02X or NAME %s present in database!"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_READER_CONNECT       "Reconnect FlashReader\nReconnect"
+    ID_READER_START         "Start current task\nStart"
+    ID_READER_STOP          "Stop current task\nStop"
+    ID_READER_SETTINGS      "Change program settings\nSettings"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_WRONG_VENDOR_INPUT  "VID must be NON ZERO and Name not empty!"
+    IDS_WRONG_VENDOR_REMOVE "This Vendor used by flash records in database!"
+    IDS_PROMPT_REMOVE       "Selected record will be removed. Are you sure?"
+    IDS_WRONG_READER        "Reader device not selected!"
+    IDS_READER_BUSY         "Reader device used by another program!"
+    IDS_READER_BAD          "Reader device not supported UDMA mode!"
+    IDS_WRONG_TASK          "Task name is empty!"
+    IDS_TASK_EXISTS         "Task already exists!\nAll data will be deleted. Continue?"
+    IDS_CHECK_FLASH         "Check flash - %s, ID - %s\n"
+    IDS_ERROR_READ_FLASH    "Read flash -COMMAND ERROR\n"
+    IDS_ERROR_NO_FLASH      "Check flash - Flash NOT CONNECTED!\n"
+    IDS_ERROR_READ_FILE     "Read file - COMMAND ERROR\n"
+    IDS_WRONG_FILE          "Wrong Data file size! Reset to new task!"
+    IDS_NO_FLASH            "NoTask"
+    IDS_WRONG_TASK_FILE     "Wrong task file!"
+    IDS_WRONG_TASK_VERSION  "Wrong task file version!"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_WRONG_STEP_COUNT    "Minimum Read count value is %d"
+    IDS_READ_ONCE           "First read"
+    IDS_VERIFY              "Verify"
+    IDS_BIT_CORRECTION      "Bit correction"
+    IDS_SUBTASK_START       "CE%d, %s started\n"
+    IDS_SUBTASK_COMPLETE    "Complete (%d min %02d sec, %d MB/min)\n"
+    IDS_SUBTASK_BREAK       "Break by user\n"
+    IDS_SUBTASK_ERROR       "Break on error\n"
+    IDS_ERROR_WRITE_FILE    "Write file - COMMAND ERROR\n"
+    IDS_TASK_NEW            "NEW TASK - %s\n"
+    IDS_TASK_LOAD           "LOAD TASK - %s\n"
+    IDS_PROMT_IMPORT        "Import Files (%s)|%s||"
+    IDS_WRONG_WINDOWS       "Program must be run under Windows 2000 or later"
+    IDS_WRONG_FILE_SYSTEM   "Program must be run on volume with NTFS file system"
+    IDS_ERROR_LOG_FILE      "Can not open Log file!"
+    IDS_CHIP_NOT_PRESENT    "Chip not present in database. Add chip?\nAttantion! Check chip VCC, ID and ID mask value"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_DATABASE_IMPORT      "Import records from file\nImport to database"
+    ID_DATABASE_EDIT        "Edit databese records\nEdit database"
+    ID_DATABASE_MERGE       "Merge records from other database\nMerge database"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_PROMT_MERGE         "Database Files (%s)|%s||"
+    IDS_WRONG_PARAMETERS_PAGE 
+                            "All ONFI parameters pages are corrupted!\nAutomatic set parameters canceleded"
+    IDS_SELECT_DIRECTORY    "Select folder to store data files\nAttantion! Distanation disk must be with NTFS file system! "
+    IDS_THREAD_ERROR        "Unknown thread ERROR\n"
+    IDS_POWER_FAIL          "Power FAIL! - Device error\n"
+    IDS_POWER_HIGH          "Power FAIL! - Voltage HIGH\n"
+    IDS_POWER_LOW           "Power FAIL! - Voltage LOW\n"
+    IDS_POWER_UNKNOWN       "Power FAIL! - Unknown error\n"
+    IDS_ERROR_POWER         "Read flash - POWER ERROR\n"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#include "res\FlashReader.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#include "OXMain.rc"       // Ultimate toolbox components
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

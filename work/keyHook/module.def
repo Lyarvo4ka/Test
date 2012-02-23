@@ -1,0 +1,4 @@
+LIBRARY	"KeyHook"
+
+EXPORTS
+	KbdHook

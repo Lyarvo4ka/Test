@@ -1,0 +1,29 @@
+// Number.idl : type library source for Number.exe
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (Number.tlb).
+
+[ uuid(2DB673B5-354D-4E55-9A57-B678E5565A85), version(1.0) ]
+library Number
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	//  Primary dispatch interface for CNumberDoc
+	
+	[ uuid(27ED1D89-F8CF-4A66-86DE-75307C3B2C00) ]
+	dispinterface INumber
+	{
+		properties:
+			
+		methods:
+	};
+
+	//  Class information for CNumberDoc
+	
+	[ uuid(A47A38F5-D31D-49AC-B4BE-6070C4444757) ]
+	coclass Number
+	{
+		[default] dispinterface INumber;
+	};
+};
