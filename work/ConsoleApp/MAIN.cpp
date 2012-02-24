@@ -13,6 +13,7 @@
 
 int _tmain(int argc, _TCHAR* argv[])
 {
+	int s;
 
 	int ret = 0;
 
