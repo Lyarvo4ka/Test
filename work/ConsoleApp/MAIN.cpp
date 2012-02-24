@@ -16,7 +16,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	int s = 0; // tst //tst
 	int y = 0; // tst
 	
-	int change = 0;
+	int changing = 0;
 
 	int ret = 0;
 
