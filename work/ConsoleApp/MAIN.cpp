@@ -25,7 +25,7 @@ int _tmain(int argc, _TCHAR* argv[])
 		CorrectFileSizeMain(argv[1]);
 		//CutTxtMain(argv[1]);
 	}
-
+  
 	_tprintf(_T("\nDone. Press any key ..."));
 	_getch();
 
